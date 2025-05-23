@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
 import { DoctorCard } from "../components/DoctorCard";
-
+import { doctors } from "../data/DocData";
 
 
 
@@ -14,58 +14,15 @@ export default function Home() {
       <main className="row-start-2 flex flex-col items-center sm:items-start gap-8 w-full">
         <h1 className="text-3xl font-bold text-center sm:text-left">Our Doctors</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full justify-items-center">
-          <DoctorCard
-            name="Dr. Imalsha Perera"
-            specialization="Cardiologist"
-            description="Specialist in heart and blood vessel disorders with 15+ years of experience."
-          />
-          <DoctorCard
-            name="Dr. Chamara Silva"
-            specialization="Neurologist"
-            description="Expert in diagnosing and treating disorders of the nervous system."
-          />
-          <DoctorCard
-            name="Dr. Nishadi Fernando"
-            specialization="Pediatrician"
-            description="Experienced in child health and developmental care."
-          />
-                    <DoctorCard
-            name="Dr. Imalsha Perera"
-            specialization="Cardiologist"
-            description="Specialist in heart and blood vessel disorders with 15+ years of experience."
-          />
-          <DoctorCard
-            name="Dr. Chamara Silva"
-            specialization="Neurologist"
-            description="Expert in diagnosing and treating disorders of the nervous system."
-          />
-          <DoctorCard
-            name="Dr. Nishadi Fernando"
-            specialization="Pediatrician"
-            description="Experienced in child health and developmental care."
-          />
-                    <DoctorCard
-            name="Dr. Imalsha Perera"
-            specialization="Cardiologist"
-            description="Specialist in heart and blood vessel disorders with 15+ years of experience."
-          />
-          <DoctorCard
-            name="Dr. Chamara Silva"
-            specialization="Neurologist"
-            description="Expert in diagnosing and treating disorders of the nervous system."
-          />
-          <DoctorCard
-            name="Dr. Nishadi Fernando"
-            specialization="Pediatrician"
-            description="Experienced in child health and developmental care."
-          />
-                    <DoctorCard
-            name="Dr. Nishadi Fernando"
-            specialization="Pediatrician"
-            description="Experienced in child health and developmental care."
-          />
-          
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full justify-items-center">
+          {doctors.map((doctor, index) => (
+            <DoctorCard
+              key={index}
+              name={doctor.name}
+              specialization={doctor.specialization}
+              description={doctor.description}
+            />
+          ))}
         </div>
       </main>
 <br/>
